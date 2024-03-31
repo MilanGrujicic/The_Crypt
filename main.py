@@ -18,6 +18,6 @@ def reverse_hash(hash):
         else:
             print("The password does not matched in the list…")
 
-sha3_512_hash = input("[+] Enter sha3-512 Hash value: ")
+sha3_512_hash = input("[+] Enter sha3-512 hash value: ")
 
 reverse_hash(sha3_512_hash)
