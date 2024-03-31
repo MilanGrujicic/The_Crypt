@@ -1,7 +1,7 @@
 from urllib.request import urlopen
 import hashlib
 
-sha3_512hash = input("[+] Enter sha3-512 Hash value: ")
+sha3_512_hash = input("[+] Enter sha3-512 Hash value: ")
 
 password_list = str(
     urlopen(
@@ -11,10 +11,10 @@ password_list = str(
 )
 for password in password_list.split("\n"):
     guess = hashlib.sha3_512(bytes(password, "utf-8")).hexdigest()
-    if guess == sha3_512hash:
+    if guess == sha3_512_hash:
         print("[+] The password is: " + str(password))
         break
-    elif guess != sha3_512hash:
+    elif guess != sha3_512_hash:
         continue
     else:
         print("The password does not matched in the list…")
