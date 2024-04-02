@@ -1,17 +1,28 @@
 from urllib.request import urlopen
 import hashlib
+import sys
+import time
+
 
 def reverse_hash(hash, wordlist):
     '''Compares the provided hash with the hashed passwords from wordlist.'''
-    for password in wordlist.split("\n"):
-        guess = hashlib.sha3_512(bytes(password, "utf-8")).hexdigest()
-        if guess == hash:
-            print("[+] The password is: " + str(password))
-            break
-        elif guess != hash:
-            continue
-        else:
-            print("The password does not matched in the list…")
+    password_not_found = True
+    while password_not_found:
+        print("[!] Checking passwords ")
+        for char in '|/-\\':
+            sys.stdout.write('\r' + char)
+            sys.stdout.flush()
+            time.sleep(0.1)
+        for password in wordlist.split("\n"):
+            guess = hashlib.sha3_512(bytes(password, "utf-8")).hexdigest()
+            if guess == hash:
+                print("\n[+] The password is: " + str(password))
+                password_not_found = False
+                break
+            elif guess != hash:
+                continue
+            else:
+                print("\nThe password does not matched in the list…")
 
 ten_million_password_list = str(
     urlopen(
