@@ -10,11 +10,22 @@ def load_spinner():
         sys.stdout.flush()
         time.sleep(0.1)
 
-def reverse_hash(hash, wordlist):
+def load_wordlist():
+    print("[-] Loading wordlist... Please wait.")
+    ten_million_password_list = str(
+        urlopen(
+            "https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt"
+        ).read(),
+        "utf-8",
+    )
+    return ten_million_password_list
+
+def reverse_hash(hash):
     '''Compares the provided hash with the hashed passwords from wordlist.'''
+    wordlist = load_wordlist()
     password_not_found = True
     while password_not_found:
-        print("[-] Checking passwords ")
+        print("\n[-] Checking passwords... Please wait.")
         load_spinner()
         for password in wordlist.split("\n"):
             guess = hashlib.sha3_512(bytes(password, "utf-8")).hexdigest()
@@ -27,13 +38,6 @@ def reverse_hash(hash, wordlist):
             else:
                 print("\nThe password does not matched in the list…")
 
-ten_million_password_list = str(
-    urlopen(
-        "https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt"
-    ).read(),
-    "utf-8",
-)
-
 sha3_512_hash = input("[+] Enter sha3-512 hash value: ")
 
-reverse_hash(sha3_512_hash, ten_million_password_list)
+reverse_hash(sha3_512_hash)
