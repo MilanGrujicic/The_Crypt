@@ -2,6 +2,7 @@ from urllib.request import urlopen
 import hashlib
 import sys
 import time
+import logo
 
 def load_spinner():
     '''Displays a spinner animation using basic ASCII characters.'''
@@ -37,6 +38,8 @@ def reverse_hash(hash):
                 continue
             else:
                 print("\nThe password does not matched in the list…")
+
+print(logo.logo)
 
 sha3_512_hash = input("[+] Enter sha3-512 hash value: ")
 
