@@ -12,6 +12,7 @@ def load_spinner():
         time.sleep(0.1)
 
 def load_wordlist():
+    '''Loads a 10 million password list.'''
     print("[-] Loading wordlist... Please wait.")
     ten_million_password_list = str(
         urlopen(
@@ -25,8 +26,8 @@ def reverse_hash(hash):
     '''Compares the provided hash with the hashed passwords from wordlist.'''
     wordlist = load_wordlist()
     password_not_found = True
+    print("\n[-] Checking passwords... Please wait.")
     while password_not_found:
-        print("\n[-] Checking passwords... Please wait.")
         load_spinner()
         for password in wordlist.split("\n"):
             guess = hashlib.sha3_512(bytes(password, "utf-8")).hexdigest()
