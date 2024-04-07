@@ -38,7 +38,7 @@ def reverse_hash(hash):
             elif guess != hash:
                 continue
             else:
-                print("\nThe password does not matched in the list…")
+                print("\nPassword not found.")
 
 print(logo.logo)
 
