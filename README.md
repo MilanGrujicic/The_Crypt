@@ -3,7 +3,7 @@
 ## Description
 A tool that reverses sha3-512 hases into plain text.
 
-## Rerequisites
+## Prerequisites
 - Python 3.10.12;
 - Urllib library;
 - Hashlib library;
