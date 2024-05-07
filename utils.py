@@ -38,3 +38,4 @@ def reverse_hash(hash):
                 continue
             else:
                 print("\nPassword not found.")
+    return str(password)
