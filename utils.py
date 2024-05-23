@@ -4,7 +4,7 @@ import sys
 import time
 
 def load_spinner():
-    '''Displays a spinner animation using basic ASCII characters.'''
+    '''Displays a spinner animation with basic ASCII characters.'''
     for char in '|/-\\':
         sys.stdout.write('\r' + char)
         sys.stdout.flush()
