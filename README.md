@@ -1,7 +1,7 @@
-# SHA3-512_HASH_CRACKER
+# The Crypt
 
 ## Description
-A tool that reverses sha3-512 hases into plain text.
+A tool that decrypts hashes into plain text.
 
 ## Prerequisites
 - Python 3.10.12;
