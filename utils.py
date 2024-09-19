@@ -5,8 +5,8 @@ import time
 
 def load_spinner():
     '''Displays a spinner animation with basic ASCII characters.'''
-    for char in '|/-\\':
-        sys.stdout.write('\r' + char)
+    for char in "|/-\\":
+        sys.stdout.write("\r" + char)
         sys.stdout.flush()
         time.sleep(0.1)
 
@@ -31,6 +31,9 @@ def reverse_hash(hash):
         for password in wordlist.split("\n"):
             guess = hashlib.sha3_512(bytes(password, "utf-8")).hexdigest()
             if guess == hash:
+                # Clear the spinner before printing the result.
+                sys.stdout.write("\r ") # Overwrite the spinner with a space.
+                sys.stdout.flush() 
                 print("\n[+] The password is: " + str(password))
                 password_not_found = False
                 break
