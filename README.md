@@ -1,7 +1,7 @@
 # The Crypt
 
 ## Description
-A tool that decrypts hashes into plain text.
+A tool that finds the correspondent plain text of a given SHA3-512 hash.
 
 ## Prerequisites
 - Python 3.12.3;
