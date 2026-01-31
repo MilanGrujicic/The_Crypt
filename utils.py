@@ -15,7 +15,7 @@ def load_wordlist():
     print("[-] Loading wordlist... Please wait.")
     ten_million_password_list = str(
         urlopen(
-            "https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt"
+            "https://raw.githubusercontent.com/danielmiessler/SecLists/refs/heads/master/Passwords/Common-Credentials/Pwdb_top-10000000.txt"
         ).read(),
         "utf-8",
     )
