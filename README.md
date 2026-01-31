@@ -4,7 +4,7 @@
 A tool that decrypts hashes into plain text.
 
 ## Prerequisites
-- Python 3.12.12;
+- Python 3.12.3;
 - Urllib library;
 - Hashlib library;
 
