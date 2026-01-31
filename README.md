@@ -1,7 +1,7 @@
 # The Crypt
 
 ## Description
-A tool that finds the correspondent plain text of a given SHA3-512 hash.
+A tool that finds the corresponding plain text of a given SHA3-512 hash.
 
 ## Prerequisites
 - Python 3.12.3;
